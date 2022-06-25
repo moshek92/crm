@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customers</title>
+</head>
+
+<body>
+    <!--  <h3>get all customers</h3>
+    <form method="get" action="/customers">
+        <select name="column">
+            <option value="name">Sort by customer name</option>
+            <option value="email">Sort by customer email</option>
+            <option value="country_name">Sort by country</option>
+        </select>
+        <select name="sort">
+            <option value="ASC">Sort A-Z</option>
+            <option value="DESC">Sort Z-A</option>
+        </select>
+        <button type="submit">Get All Customers</button>
+    </form> -->
+
+    <h3>Search customers</h3>
+    <form method="get" action="/customers/find">
+        <input type="text" name="search">
+        <button type="submit">Search</button>
+    </form>
+
+
+    <h3>export customers</h3>
+    <form method="get" action="/customers/export">
+        <button type="submit">Export Customers</button>
+    </form>
+
+
+    <h3>add customer</h3>
+    <form method="post" action="/customers">
+
+        <div>
+            <label>Name:</label>
+            <input type="text" name="name">
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" name="email">
+        </div>
+        <div>
+            <label>password:</label>
+            <input type="number" name="password_hase">
+        </div>
+        <div>
+            <label> type:</label>
+            <input type="number" name="type">
+        </div>
+        <button type="submit">Add Customer</button>
+    </form>
+</body>
+
+</html>
