@@ -7,16 +7,20 @@ const fileMgmt = require('../shared/fileMgmt');
 
 /* home page */
 router.get('/', function (req, res, next) {
-  res.send('this is the home page. use /customers/home') //לנביא את הcustomers
+  res.send('this is the home page. use /customers/home.')
 });
+
 
 /* authentication */
 router.get('/signin', function (req, res, next) {
-  const filePath = fileMgmt.getHtmlFilePath('login.html');
+  const filePath = fileMgmt.getHtmlFilePath('login');
   res.sendFile(filePath);
 });
 
 router.post('/login', auth.login);
+
+
+
 
 
 router.get('/logout', mwAuth, function (req, res, next) {

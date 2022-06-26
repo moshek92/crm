@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const cm = require('../controllers/customers');
+const auth = require('../middleware/auth');
 const fileMgmt = require('../shared/fileMgmt');
 
 // http://localhost:3000/customers
@@ -17,8 +18,8 @@ router.get('/details/:id', function (req, res, next) {
 });
 
 
-//router.get('/find', cm.customersList);
-//router.get('/find', cm.findCustomer);
+router.get('/find', cm.customersList);
+router.get('/find', cm.findCustomer);
 //router.get   ('/details', cm.viewCustomerDetails);
 router.get('/export', cm.exportCustomers);
 //router.patch ('/', cm.updateCustomer);

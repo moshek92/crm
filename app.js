@@ -22,7 +22,7 @@ app.use(express.static(path.join(__dirname, 'client')));
 
 app.use('/', indexRouter);
 app.use('/users', auth, usersRouter);
-app.use('/customers', customersRouter);
+app.use('/customers', auth, customersRouter);
 
 
 //catch 404 err forward error handler

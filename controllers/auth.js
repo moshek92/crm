@@ -8,9 +8,9 @@ module.exports = {
         const reqBody = req.body;
 
         const schema = joi.object({
-            name: joi.string().required().min(6).max(255),
-            email: joi.string().required().min(3).max(255).email(),
-            password: joi.string().required().min(6),
+            name: joi.string().required().min(3).max(255),
+            email: joi.string().required().min(3).max(200).email(),
+            password: joi.number().required().min(6),
 
         });
 
@@ -41,12 +41,12 @@ module.exports = {
             });
 
             // todo: use authorization header
-            // res
-            //     .cookie('access_token', token, {
-            //         httpOnly: true,
-            //         secure: true,
-            //     })
-            //     .send('Welcome, you are now logged in.');
+
+            res.cookie('access_token', token, {
+                    httpOnly: true,
+                    secure: true,
+                })
+                .send('Welcome, you are now logged in.');
 
             res
                 .json({
